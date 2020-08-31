@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>ENJOY GAMING</title>
+<script type = "text/javascript">
+var img1 = null;
+var img2 = null;
+var img3 = null;
+var img4 = null;
+var img5 = null;
+var img6 = null;
+var animate2;
+var animate3;
+var animate4;
+var animate5;
+function init()
+{ 
+img1 = document.getElementById('lion');
+img1.style.position = 'absolute';
+img1.style.left = '50px';
+img1.style.top = '50px';
+img2 = document.getElementById('goat1');
+img2.style.position = 'absolute';
+img2.style.left = '700px';
+img2.style.top = '700px';
+img3 = document.getElementById('goat2');
+img3.style.position = 'absolute';
+img3.style.left = '500px';
+img3.style.top = '500px';
+img4 = document.getElementById('goat3');
+img4.style.position = 'absolute';
+img4.style.left = '300px';
+img4.style.top = '300px';
+img5 = document.getElementById('goat4');
+img5.style.position = 'absolute';
+img5.style.left = '900px';
+img5.style.top = '900px';
+img6 = document.getElementById('den');
+img6.style.position = 'absolute';
+img6.style.left = '1000px';
+img6.style.top = '1200px';
+}
+
+function Start2()
+{ img2.style.left = parseInt( img2.style.left) - 25 + 'px';
+ animate2 = setTimeout(Start2,50);
+if(img2.style.left == '0px')
+{Stop2();
+Start2();
+}
+if(img2.style.left == img1.style.left & img2.style.top == img1.style.top)
+{ Stop2();
+  img2.style.left = '2000px';
+ img2.style.top = '2000px';
+}
+}
+
+function Start3()
+{ img3.style.left = parseInt( img3.style.left) - 25 + 'px';
+ animate3 = setTimeout(Start3,50);
+if(img3.style.left == '0px')
+{Stop3();
+Start3();
+}
+if(img3.style.left == img1.style.left & img3.style.top == img1.style.top)
+{ Stop3();
+  img3.style.left = '2000px';
+ img3.style.top = '2000px';
+}
+}
+
+
+function Stop2()
+{clearTimeout(animate2);
+ img2.style.left = '1000px';
+}
+
+function Stop3()
+{clearTimeout(animate3);
+ img3.style.left = '1000px';
+}
+
+function Start4()
+{ img4.style.left = parseInt( img4.style.left) - 25 + 'px';
+ animate4 = setTimeout(Start4,50);
+if(img4.style.left == '0px')
+{Stop4();
+Start4();
+}
+ if(img4.style.left == img1.style.left & img4.style.top == img1.style.top)
+{ Stop4();
+  img4.style.left = '3000px';
+ img4.style.top = '3000px';
+}
+}
+
+function Stop4()
+{clearTimeout(animate4);
+ img4.style.left = '1000px';
+}
+
+function Start5()
+{ img5.style.top = parseInt( img5.style.top) - 25 + 'px';
+ animate5 = setTimeout(Start5,50);
+if(img5.style.top == '0px')
+{Stop5();
+Start5();
+}
+if(img5.style.left == img1.style.left & img5.style.top == img1.style.top)
+{ Stop5();
+  img5.style.left = '3000px';
+ img5.style.top = '3000px';
+}
+}
+
+function Stop5()
+{clearTimeout(animate5);
+ img5.style.top = '1000px';
+}
+
+function Up()
+{img1.style.top = parseInt(img1.style.top) - 25 + 'px';
+ if(img1.style.left == img6.style.left & img1.style.top == img6.style.top)
+{ document.write("YOU WON");
+}
+}
+
+function Down()
+{img1.style.top = parseInt(img1.style.top) + 25 + 'px';
+if(img1.style.left == img6.style.left & img1.style.top == img6.style.top)
+{ document.write("YOU WON");
+}
+}
+
+function Right()
+{img1.style.left = parseInt(img1.style.left) + 25 + 'px';
+if(img1.style.left == img6.style.left & img1.style.top == img6.style.top)
+{ 
+document.write("YOU WON");
+}
+}
+
+function Left()
+{img1.style.left = parseInt(img1.style.left) - 25 + 'px';
+if(img1.style.left == '1000px' & img1.style.top == '1200px')
+{ document.write("YOU WON");
+}
+}
+
+window.onload = init;
+
+
+
+
+</script>
+</head>
+<body style = "background-image : url(forest.jpg); height : 50cm; width : 50cm;">
+<form style = "position : fixed;">
+<input type = "button" value = "Start2" onclick = "Start2()"/>
+<input type = "button" value = "Start3" onclick = "Start3()"/>
+<input type = "button" value = "Start4" onclick = "Start4()"/>
+<input type = "button" value = "Start5" onclick = "Start5()"/>
+<input type = "button" value = "Right" onclick = "Right()"/>
+<input type = "button" value = "Left" onclick = "Left()"/>
+<input type = "button" value = "Up" onclick = "Up()"/>
+<input type = "button" value = "Down" onclick = "Down()"/>
+
+
+
+</form>
+<form>
+<img id = 'lion' style = "height = 3cm ; width : 3cm;" src = "lion.jpg"/>
+<img id = 'goat1' style = "height = 3cm ; width : 3cm;" src = "goat.png"/>
+<img id = 'goat2' style = "height = 3cm ; width : 3cm;" src = "goat.png"/>
+<img id = 'goat3' style = "height = 3cm ; width : 3cm;" src = "goat.png"/>
+<img id = 'goat4' style = "height = 3cm ; width : 3cm;" src = "goat.png"/>
+
+
+<img id = 'den' style = "height = 5cm ; width : 5cm;" src = "den.jpg"/>
+</form>
+</body>
+</html>
